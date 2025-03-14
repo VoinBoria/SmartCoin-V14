@@ -12,8 +12,8 @@ android {
         applicationId = "com.serhio.homeaccountingapp"
         minSdk = 24
         targetSdk = 35
-        versionCode = 8
-        versionName = "8.0"
+        versionCode = 11
+        versionName = "11.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -110,5 +110,6 @@ dependencies {
     implementation("androidx.work:work-runtime-ktx:2.8.0")
 
     // AdMob SDK
-    implementation("com.google.android.gms:play-services-ads:22.0.0")
+    implementation("com.google.android.gms:play-services-ads:24.0.0")
+
 }
