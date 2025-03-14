@@ -265,7 +265,6 @@ fun GradientDonutChart(
     }
 }
 
-
 fun generateDistinctColors(count: Int, excludeRed: Boolean = false, excludeGreen: Boolean = false): List<Color> {
     val predefinedColors = listOf(
         Color(0xFFe6194B), // red
@@ -287,7 +286,15 @@ fun generateDistinctColors(count: Int, excludeRed: Boolean = false, excludeGreen
         Color(0xFF808000), // olive
         Color(0xFFffd8b1), // coral
         Color(0xFF000075), // navy
-        Color(0xFFa9a9a9)  // gray
+        Color(0xFFa9a9a9),  // gray
+        Color(0xFF000000), // black
+        Color(0xFF808080), // dark gray
+        Color(0xFFB0E0E6), // powder blue
+        Color(0xFF800080), // dark purple
+        Color(0xFF008080), // dark cyan
+        Color(0xFF00FF00), // bright green
+        Color(0xFFFFD700), // gold
+        Color(0xFF8B4513)  // saddle brown
     )
 
     val filteredColors = predefinedColors.filter {
@@ -296,7 +303,6 @@ fun generateDistinctColors(count: Int, excludeRed: Boolean = false, excludeGreen
 
     return List(count) { filteredColors[it % filteredColors.size] }
 }
-
 @SuppressLint("UnusedBoxWithConstraintsScope")
 @Composable
 fun ExpandableButtonWithAmount(
