@@ -192,7 +192,7 @@ fun LegendColumn(
                     modifier = Modifier
                         .size(12.dp)
                         .background(
-                            color = colors[index],
+                            color = colors.getOrElse(index) { colors.last() }, // Виправлено: використання кольору за замовчуванням, якщо індекс виходить за межі
                             shape = CircleShape
                         )
                 )
@@ -210,6 +210,7 @@ fun LegendColumn(
         Box(modifier = Modifier.height(16.dp)) // Додаємо відступ знизу, щоб уникнути обрізання кольорової крапки
     }
 }
+
 @Composable
 fun GradientDonutChart(
     values: List<Double>,
@@ -243,7 +244,7 @@ fun GradientDonutChart(
                 )
                 // Сегмент
                 drawArc(
-                    color = colors[i],
+                    color = colors.getOrElse(i) { colors.last() }, // Виправлено: використання кольору за замовчуванням, якщо індекс виходить за межі
                     startAngle = startAngle + gapSize,
                     sweepAngle = sweepAngles[i] - gapSize,
                     useCenter = false,
